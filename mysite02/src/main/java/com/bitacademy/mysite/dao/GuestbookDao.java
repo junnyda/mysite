@@ -152,7 +152,7 @@ public class GuestbookDao {
 			conn = DriverManager.getConnection(url, "webdb", "webdb");
 		} catch (ClassNotFoundException e) {
 			System.out.println("드라이버 로딩 실패:" + e);
-		} 
+		}
 		
 		return conn;
 	}

@@ -1,3 +1,4 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,7 +40,7 @@
 						<table>
 							<tr>
 								<td>[4]</td>
-								<td>안대혁</td>
+								<td>배승준</td>
 								<td>2015-11-10 11:22:30</td>
 								<td><a href="">삭제</a></td>
 							</tr>
@@ -57,7 +58,7 @@
 		</div>
 		<div id="navigation">
 			<ul>
-				<li><a href="">안대혁</a></li>
+				<li><a href="">배승준</a></li>
 				<li><a href="">방명록</a></li>
 				<li><a href="">게시판</a></li>
 			</ul>
