@@ -10,7 +10,9 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpFilter;
 
 public class EncodingFilter extends HttpFilter implements Filter {
-    private String encoding = "utf-8";
+	private static final long serialVersionUID = 1L;
+
+	private String encoding = "utf-8";
     
 	public void init(FilterConfig fConfig) throws ServletException {
 		encoding = fConfig.getInitParameter("encoding");

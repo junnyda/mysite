@@ -12,9 +12,8 @@ public class MainController extends HttpServlet {
 	@Override
 	public void init() throws ServletException {
 		String configPath = getServletConfig().getInitParameter("config");
-		System.out.println("MainController.init() called:" +configPath);
+		System.out.println("MainController.init() called:" + configPath);
 	}
-	
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request
@@ -25,6 +24,4 @@ public class MainController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 	}
-
-
 }
