@@ -15,7 +15,7 @@
 	<mvc:annotation-driven>
 		<!-- Argument Resolvers -->
 		<mvc:argument-resolvers>
-			<bean class="com.bitacadey.mysite.sercurity.AuthUserHandlerMethodArgumentResolver."/>
+			<bean class="com.bitacademy.mysite.security.AuthUserHandlerMethodArgumentResolver"/>
 		</mvc:argument-resolvers>
 	</mvc:annotation-driven>
 
