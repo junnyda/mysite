@@ -1,89 +1,32 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%> 
-<%@ page contentType="text/html;charset=UTF-8" %>
-<%pageContext.setAttribute( "newLine", "\n" );%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <title>mysite</title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
-<link href="${pageContext.request.contextPath }/assets/css/gallery.css" rel="stylesheet" type="text/css">
-<link href="${pageContext.request.contextPath }/assets/css/lightbox.css" rel="stylesheet" type="text/css">
-<link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css">
-<script type="text/javascript" src="${pageContext.request.contextPath }/assets/js/jquery/jquery-1.9.0.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath }/assets/js/lightbox.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script type="text/javascript">
-$(function(){
-	// 업로드 다이알로그
-	var dialogUpload = $( "#dialog-upload-form" ).dialog({
-		autoOpen: false,
-		height: 280,
-		width: 300,
-		modal: true,
-		buttons: {
-			"업로드": function() {
-				$( "#dialog-upload-form form" ).submit();
-				$( this ).dialog( "close" );
-			},
-			"취소" : function() {
-				$( this ).dialog( "close" );
-			}
-		},
-		close: function() {
-			$( "#dialog-upload-form form" ).get(0).reset();	
-		}
-	});
-		
-	$("#upload-image").click( function(event) {
-		event.preventDefault();
-		dialogUpload.dialog( "open" );
-	});
-});	
-</script>
+<link href="${pageContext.request.contextPath }/assets/css/main.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 	<div id="container">
 		<c:import url="/WEB-INF/views/includes/header.jsp" />
-		<div id="content">
-			<div id="gallery">
-				<div>
-					<h1>갤러리</h1>
-					<a href="" id="upload-image">이미지 올리기</a>
+		<div id="wrapper">
+			<div id="content">
+				<div id="site-introduction">
+					<img id="profile" src="${pageContext.request.contextPath }/assets/images/luffy.gif" style="width:200px">
+					<h2>안녕하세요. 배승준의 mysite에 오신 것을 환영합니다.</h2>
+					<p>
+						이 사이트는  웹 프로그램밍 실습과제 예제 사이트입니다.<br>
+						메뉴는  사이트 소개, 방명록, 게시판이 있구요. Java 수업 + 데이터베이스 수업 + 웹프로그래밍 수업 배운 거 있는거 없는 거 다 합쳐서
+						만들어 놓은 사이트 입니다.<br><br>
+						<a href="${pageContext.request.contextPath }/guestbook">방명록</a>에 글 남기기<br>
+					</p>
 				</div>
-				<ul>
-					<c:forEach var="vo" items="${list }">
-						<li>
-							<a	href="${pageContext.request.contextPath }${vo.url }"
-								data-lightbox="gallery"
-								class="image"
-								style="background-image:url('${pageContext.request.contextPath }${vo.url }')">&nbsp;</a>
-								
-							<a	href="${pageContext.request.contextPath }/gallery/delete/${vo.no }"
-								class="del-button"
-								title="삭제">삭제</a>
-						</li>
-					</c:forEach>
-				</ul>	
-			</div>
-
-			<div id="dialog-upload-form" title="이미지 업로드" style="display:none">
-  				<p class="validateTips normal">이미지와 간단한 코멘트를 입력해 주세요.</p>
-  				<form action="${pageContext.request.contextPath }/gallery/upload" 
-  					  method="post"
-  					  enctype="multipart/form-data">
-					<label>코멘트</label>
-					<input type="text" id="input-comments" name="comments" value="">
-					<label>이미지</label>
-					<input type="file" id="input-file" name="file">
-					<input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
-  				</form>
 			</div>
 		</div>
-		<c:import url="/WEB-INF/views/includes/navigation.jsp">
-			<c:param name="menu" value="gallery"/>
-		</c:import>
+		<c:import url="/WEB-INF/views/includes/navigation.jsp" />
 		<c:import url="/WEB-INF/views/includes/footer.jsp" />
 	</div>
 </body>
