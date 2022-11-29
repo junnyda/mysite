@@ -8,7 +8,6 @@ import org.springframework.context.annotation.Import;
 import com.bitacademy.mysite.config.app.DBConfig;
 import com.bitacademy.mysite.config.app.MyBatisConfig;
 
-
 @Configuration
 @EnableAspectJAutoProxy
 @ComponentScan({"com.bitacademy.mysite.service", "com.bitacademy.mysite.repository", "com.bitacademy.mysite.aspect"})
