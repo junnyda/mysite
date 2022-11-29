@@ -1,3 +1,5 @@
+
+
 [src/main/java]
 com.bitacademy.mysite.config
 	|- AppConfig
@@ -10,6 +12,8 @@ com.bitacademy.mysite.config.web
 	|- SecurityConfig
 	|- FileuploadConfig
 	|- MessageResourceConfig
+	
+
 
 [src/main/resource]
 com.bitacademy.mysite.config.app
