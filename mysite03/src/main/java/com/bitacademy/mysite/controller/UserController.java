@@ -1,4 +1,4 @@
-package com.bitacademy.mysite.controller;
+ package com.bitacademy.mysite.controller;
 
 import javax.validation.Valid;
 
